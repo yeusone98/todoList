@@ -39,7 +39,7 @@ export class AddNewTaskPage implements OnInit {
   AddTask(){
       this.taskObject = {
       itemName: this.taskName,
-      itemDate: this.taskDate,
+      itemDueDate: this.taskDate,
       itemPriority: this.taskPriority,
       itemCategory: this.taskCategory,
     };
