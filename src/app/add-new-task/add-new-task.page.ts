@@ -23,10 +23,14 @@ export class AddNewTaskPage implements OnInit {
 
   ngOnInit(){
   }
-
   async dismiss(){
-    await this.modalCtrl.dismiss(this.taskObject)
+    if (this.taskName !== '' && this.taskPriority !== '' && this.taskCategory !== '') {
+      await this.modalCtrl.dismiss(this.taskObject);
+    } else {
+      await this.modalCtrl.dismiss();
+    }
   }
+
 
   selectedCategory(index:number){
     this.taskCategory = this.categories[index]

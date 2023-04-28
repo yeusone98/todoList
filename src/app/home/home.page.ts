@@ -38,10 +38,11 @@ export class HomePage {
     component: AddNewTaskPage
   })
   modal.onDidDismiss().then(newTaskObj => {
-    console.log(newTaskObj.data);
-    this.todoList.push(newTaskObj.data)
-  })
-
+    if (newTaskObj.data) {
+      console.log(newTaskObj.data);
+      this.todoList.push(newTaskObj.data);
+    }
+  });
   return await modal.present()
   }
   delete(index:number){
